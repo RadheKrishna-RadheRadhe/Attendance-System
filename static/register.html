@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Register User - Face Attendance System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/register.css" />
+</head>
+
+<body>
+    <header>
+        👤 Register New User
+    </header>
+    <main>
+        <h2>Add New User</h2>
+        <p>Enter name and capture or upload face photo.</p>
+        <input type="text" id="nameInput" placeholder="Enter Name" required /><br><br>
+        <input type="file" accept="image/*" capture="user" id="fileInput" /><br><br>
+        <button id="registerBtn">Register</button>
+        <p id="message"></p>
+    </main>
+    <footer>
+        &copy; 2025 Your Organization. All rights reserved.
+    </footer>
+    <script src="/static/js/register.js"></script>
+</body>
+
+</html>

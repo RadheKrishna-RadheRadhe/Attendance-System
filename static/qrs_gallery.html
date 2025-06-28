@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Gallery</title>
+    <link rel="stylesheet" href="/static/css/qrs_gallery.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <button id="themeToggle" aria-label="Toggle Theme">
+                <span class="theme-icon">🌙</span>
+                <span class="theme-label">Dark</span>
+            </button>
+            <h1>QR Code Gallery</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="button-container">
+            <button id="generateBtn">Generate QR Code</button>
+            <button id="showBtn">Show All QR Codes</button>
+        </div>
+
+        <div id="qrResult" class="qr-result"></div>
+        <div id="qrGallery" class="qr-gallery"></div>
+    </main>
+
+    <!-- Modal for zoomed QR -->
+    <div id="qrModal" class="qr-modal" aria-modal="true" role="dialog" tabindex="-1">
+        <div class="qr-modal-content">
+            <img id="qrModalImg" alt="Zoomed QR">
+        </div>
+    </div>
+
+    <script src="/static/js/qrs_gallery.js"></script>
+</body>
+
+</html>
