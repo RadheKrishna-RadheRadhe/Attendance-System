@@ -1,3 +1,3 @@
 Fully Working Attendance System
 
-WWorks in local server
+Works in local server
