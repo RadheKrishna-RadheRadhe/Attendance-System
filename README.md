@@ -39,7 +39,7 @@ project/
 
 │
 
-├── server.py                # Flask app
+├── app.py                # Flask app
 
 ├── recognizer.py            # Face encoding and prediction
 
