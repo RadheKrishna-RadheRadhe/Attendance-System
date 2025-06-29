@@ -1,0 +1,134 @@
+/* Light and Dark themes */
+body.light {
+    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+body.dark {
+    background-color: #121212;
+    color: #e0e0e0;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+/* Header box */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 16px 24px;
+    background-color: #8e24aa;
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+header button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.3s;
+}
+
+header button:hover {
+    transform: scale(1.2);
+    color: #ffd700;
+}
+
+/* Main layout */
+main {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeIn 0.6s ease;
+}
+
+/* Video styling */
+video {
+    width: 100%;
+    max-width: 500px;
+    border: 3px solid #333;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: border-color 0.3s;
+}
+
+body.dark video {
+    border-color: #bbb;
+}
+
+/* Capture button */
+button#captureBtn {
+    margin-top: 20px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #8e24aa;
+    color: white;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button#captureBtn:hover {
+    background-color: #6a1b9a;
+}
+
+button#captureBtn:active {
+    transform: scale(0.98);
+}
+
+/* Canvas (hidden) */
+canvas {
+    display: none;
+}
+
+/* Preview image */
+#preview {
+    margin-top: 20px;
+    max-width: 100%;
+    border: 3px solid #333;
+    border-radius: 10px;
+    display: none;
+    transition: opacity 0.4s;
+}
+
+body.dark #preview {
+    border-color: #bbb;
+}
+
+/* Result text */
+#result {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.5s, color 0.3s;
+}
+
+#result.show {
+    opacity: 1;
+}
+
+/* Fade-in animation for main */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

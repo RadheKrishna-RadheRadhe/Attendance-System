@@ -2,27 +2,33 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
-    <title>Register User - Face Attendance System</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/static/css/register.css" />
+    <title>Face Registration</title>
+    <link rel="stylesheet" href="/static/css/register.css">
 </head>
 
 <body>
-    <header>
-        👤 Register New User
-    </header>
-    <main>
-        <h2>Add New User</h2>
-        <p>Enter name and capture or upload face photo.</p>
-        <input type="text" id="nameInput" placeholder="Enter Name" required /><br><br>
-        <input type="file" accept="image/*" capture="user" id="fileInput" /><br><br>
-        <button id="registerBtn">Register</button>
-        <p id="message"></p>
-    </main>
-    <footer>
-        &copy; 2025 Your Organization. All rights reserved.
-    </footer>
+    <div class="container">
+        <h1>Face Registration</h1>
+        <form id="registerForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="reg_number">Registration Number:</label>
+            <input type="text" id="reg_number" required>
+
+            <label for="image">Face Image:</label>
+            <input type="file" id="image" accept="image/*" capture="user" required>
+            <div class="preview-container">
+                <img id="previewImage" class="preview" alt="Image preview" />
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+        <div id="status"></div>
+    </div>
+
     <script src="/static/js/register.js"></script>
 </body>
 

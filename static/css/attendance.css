@@ -1,43 +1,111 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     margin: 0;
-    background: #f0f6fb;
+    padding: 0;
+    background: linear-gradient(160deg, #e0f7fa, #e1bee7);
+    color: #333;
+    min-height: 100vh;
 }
 
-header {
-    background-color: #3498db;
-    color: white;
-    padding: 16px;
+h1 {
     text-align: center;
-    font-size: 24px;
+    color: #6a1b9a;
+    margin: 20px 0;
+    font-size: 1.7rem;
 }
 
-main {
-    max-width: 500px;
-    margin: 30px auto;
-    background: white;
+.step h2 {
+    text-align: center;
+    color: #6a1b9a;
+    margin-bottom: 16px;
+    font-size: 1.3rem;
+}
+
+
+.step {
+    display: none;
+    background: #ffffffee;
+    border-radius: 12px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 480px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.4s ease;
+}
+
+.step.active {
+    display: block;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.preview-container {
+    margin-top: 16px;
     text-align: center;
+}
+
+.preview {
+    width: 100%;
+    max-width: 180px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    margin-top: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: none;
+    object-fit: cover;
+}
+
+.preview[src] {
+    display: inline-block;
 }
 
 button {
-    background-color: #3498db;
+    width: 100%;
+    padding: 14px 0;
+    background-color: #8e24aa;
     color: white;
-    padding: 12px 20px;
-    margin-top: 12px;
     border: none;
     border-radius: 6px;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 16px;
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #6a1b9a;
 }
 
-#message {
-    margin-top: 16px;
-    color: #555;
+button:active {
+    transform: scale(0.98);
+}
+
+#status {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #6a1b9a;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

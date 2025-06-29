@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration QR Gallery</title>
+    <link rel="stylesheet" href="/static/css/register_qr_gallery.css" />
+</head>
+<body>
+    <header>
+        <h1>📸 Registration</h1>
+        <button id="themeToggle">🌓 Toggle Theme</button>
+    </header>
+
+    <main>
+        <div id="status"></div>
+        <div id="gallery"></div>
+    </main>
+
+    <!-- Modal for zoom -->
+    <div id="qrModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg" alt="Zoomed QR">
+    </div>
+
+    <script src="/static/js/register_qr_gallery.js"></script>
+</body>
+</html>

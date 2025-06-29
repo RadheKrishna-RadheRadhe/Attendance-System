@@ -5,83 +5,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Desktop Attendance - Camera</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0f0f0;
-            text-align: center;
-            padding: 20px;
-        }
-
-        video {
-            width: 100%;
-            max-width: 500px;
-            border: 2px solid #333;
-            border-radius: 8px;
-        }
-
-        canvas {
-            display: none;
-        }
-
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/css/attendance_desktop.css">
 </head>
 
-<body>
-    <h1>Desktop Attendance (Camera)</h1>
-    <video id="video" autoplay playsinline></video>
-    <br />
-    <button id="captureBtn">Capture and Submit Attendance</button>
-    <canvas id="canvas"></canvas>
-    <p id="result"></p>
+<body class="light">
+    <header>
+        <h1>Desktop Attendance (Camera)</h1>
+        <button id="themeToggle">🌙 Toggle Theme</button>
+    </header>
 
-    <script>
-        const video = document.getElementById('video');
-        const canvas = document.getElementById('canvas');
-        const result = document.getElementById('result');
+    <main>
+        <video id="video" autoplay playsinline></video>
+        <button id="captureBtn">📸 Capture and Submit Attendance</button>
+        <canvas id="canvas"></canvas>
+        <img id="preview" alt="Captured Image Preview" style="display:none;">
+        <p id="result"></p>
+    </main>
 
-        // Start the camera
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(stream => {
-                video.srcObject = stream;
-            })
-            .catch(err => {
-                result.textContent = 'Error accessing camera: ' + err;
-            });
-
-        document.getElementById('captureBtn').addEventListener('click', async () => {
-            // Draw frame to canvas
-            const context = canvas.getContext('2d');
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-            // Get the image blob
-            canvas.toBlob(async (blob) => {
-                const formData = new FormData();
-                formData.append('image', blob, 'attendance.jpg');
-
-                result.textContent = 'Uploading...';
-
-                const response = await fetch('/api/attendance_upload', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                const data = await response.json();
-                if (data.status === 'success') {
-                    result.textContent = `✅ ${data.message}`;
-                } else {
-                    result.textContent = `❌ ${data.message}`;
-                }
-            }, 'image/jpeg');
-        });
-    </script>
+    <script src="/static/js/attendance_desktop.js"></script>
 </body>
 
 </html>
