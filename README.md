@@ -1,1 +1,3 @@
-Still in testing and it works locally
+Fully Working Attendance System
+
+WWorks in local server
